@@ -30,39 +30,52 @@ export let projectNewData: Object[] = [
     },
     {
         TaskID: 6,
-        TaskName: 'Market research',
+        TaskName: 'PROGRAM',
         StartDate: new Date('04/02/2019'),
         EndDate: new Date('04/21/2019'),
         subtasks: [
             {
-                TaskID: 7,
-                TaskName: 'Demand analysis',
+                TaskID: 70,
+                TaskName: 'PROJ 1',
                 StartDate: new Date('04/04/2019'),
                 EndDate: new Date('04/21/2019'),
                 subtasks: [
                     {
-                        TaskID: 8, TaskName: 'Customer strength', StartDate: new Date('04/04/2019'), Duration: 4,
-                        Predecessor: '5', Progress: 30
+                        TaskID: 701, TaskName: 'Phase 1', StartDate: new Date('04/04/2019'), Duration: 4,
+                        Predecessor: '5', Progress: 30 
                     },
-                    { TaskID: 9, TaskName: 'Market opportunity analysis', StartDate: new Date('04/04/2019'), Duration: 4, Predecessor: '5' }
+                    { 
+                        TaskID: 702, TaskName: 'Phase 2', StartDate: new Date('09/04/2019'), Duration: 9, Predecessor: '5' 
+                    },
+                    {
+                        TaskID: 703, TaskName: 'Phase 3', StartDate: new Date('04/04/2019'), Duration: 4,
+                        Predecessor: '701, 702', Progress: 30
+                    },
+                    {
+                        TaskID: 704, TaskName: 'Phase 4', StartDate: new Date('04/04/2019'), Duration: 4,
+                        Predecessor: '701, 702', Progress: 30
+                    },
+                    {
+                        TaskID: 705, TaskName: 'Phase 5', StartDate: new Date('04/04/2019'),
+                        Duration: 4, Progress: 30, Predecessor: '703'
+                    },
+                    {
+                        TaskID: 706, TaskName: 'Phase 6', StartDate: new Date('04/04/2019'),
+                        Duration: 4, Progress: 30, Predecessor: '704',
+                        Indicators: [
+                            {
+                                'date': '06/21/2019',
+                                'name': 'Sales and marketing',
+                                'tooltip': 'Sales and marketing',
+                                'iconClass': 'description e-icons'
+                            }
+                        ],
+                    }
                 ]
             },
-            {
-                TaskID: 10, TaskName: 'Competitor analysis', StartDate: new Date('04/04/2019'), Duration: 4,
-                Predecessor: '7, 8', Progress: 30
-            },
-            { TaskID: 11, TaskName: 'Product strength analsysis', StartDate: new Date('04/04/2019'), Duration: 4, Predecessor: '9' },
-            {
-                TaskID: 12, TaskName: 'Research complete', StartDate: new Date('04/04/2019'), Duration: 0, Predecessor: '10',
-                Indicators: [
-                    {
-                        'date': '04/20/2019',
-                        'name': 'Research completed',
-                        'tooltip': 'Research completed',
-                        'iconClass': 'description e-icons'
-                    }
-                ],
-            }
+          
+        
+
         ]
     },
     {
@@ -151,38 +164,10 @@ export let projectNewData: Object[] = [
         TaskName: 'Final product development',
         StartDate: new Date('04/04/2019'),
         EndDate: new Date('04/21/2019'),
-        subtasks: [
-            {
-                TaskID: 36, TaskName: 'Important improvements', StartDate: new Date('04/04/2019'),
-                Duration: 4, Progress: 30, Predecessor: '34'
-            },
-            {
-                TaskID: 37, TaskName: 'Address any unforeseen issues', StartDate: new Date('04/04/2019'),
-                Duration: 4, Progress: 30, Predecessor: '36ss',
-                Indicators: [
-                    {
-                        'date': '06/21/2019',
-                        'name': 'Sales and marketing',
-                        'tooltip': 'Sales and marketing',
-                        'iconClass': 'description e-icons'
-                    }
-                ],
-            }
-        ]
+        subtasks: []
+  
     },
-    {
-        TaskID: 38,
-        TaskName: 'Final product',
-        StartDate: new Date('04/04/2019'),
-        EndDate: new Date('04/21/2019'),
-        subtasks: [
-            { TaskID: 39, TaskName: 'Branding product', StartDate: new Date('04/04/2019'), Duration: 4, Predecessor: '37' },
-            {
-                TaskID: 40, TaskName: 'Marketing and presales', StartDate: new Date('04/04/2019'),
-                Duration: 4, Progress: 30, Predecessor: '39'
-            }
-        ]
-    }
+
 ];
 
 export let templateData: Object[] = [
